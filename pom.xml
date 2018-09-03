@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>22.3.0</version>
+		<version>23.1.0</version>
 	</parent>
 
-	<artifactId>fiji-plugin-yaml-metadataCreator</artifactId>
-	<version>0.1.00</version>
+	<artifactId>fiji-plugin-yamlMetadataCreator</artifactId>
+	<version>0.1.01</version>
 
 	<name>Fiji Plugin YAML Metadata</name>
 	<description>TODO</description>
@@ -132,17 +132,17 @@
 			<version>1.16</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-yaml</artifactId>
-			<version>2.9.6</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.fasterxml.jackson.dataformat</groupId>-->
+			<!--<artifactId>jackson-dataformat-yaml</artifactId>-->
+			<!--<version>2.9.6</version>-->
+		<!--</dependency>-->
 
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.9.6</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.fasterxml.jackson.core</groupId>-->
+			<!--<artifactId>jackson-databind</artifactId>-->
+			<!--<version>2.9.6</version>-->
+		<!--</dependency>-->
 
 	</dependencies>
 

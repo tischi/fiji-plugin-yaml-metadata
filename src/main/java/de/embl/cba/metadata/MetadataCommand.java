@@ -1,6 +1,5 @@
 package de.embl.cba.metadata;
 
-import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 import ij.IJ;
 import net.imagej.DatasetService;
 import net.imagej.ops.OpService;
@@ -14,10 +13,6 @@ import org.scijava.widget.FileWidget;
 
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SequenceWriter;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -90,27 +85,27 @@ public class MetadataCommand implements Command
 		return dumperOptions;
 	}
 
-	public void createJacksonYamlFile( Metadata metadata, String outputPath )
-	{
-
-		// Create an ObjectMapper mapper for YAML
-		//ObjectMapper mapper = new ObjectMapper(new YAMLFactory().enable( YAMLGenerator.Feature.MINIMIZE_QUOTES ) );
-
-		ObjectMapper mapper = new ObjectMapper(new YAMLFactory()
-				.enable( YAMLGenerator.Feature.MINIMIZE_QUOTES )
-				.enable( YAMLGenerator.Feature.LITERAL_BLOCK_STYLE ));
-
-		try
-		{
-			FileOutputStream fos = new FileOutputStream( outputPath );
-			SequenceWriter sw = mapper.writer().writeValues(fos);
-			sw.write( metadata );
-			fos.close();
-		}
-		catch ( Exception e )
-		{
-			e.printStackTrace();
-		}
-	}
+//	public void createJacksonYamlFile( Metadata metadata, String outputPath )
+//	{
+//
+//		// Create an ObjectMapper mapper for YAML
+//		//ObjectMapper mapper = new ObjectMapper(new YAMLFactory().enable( YAMLGenerator.Feature.MINIMIZE_QUOTES ) );
+//
+//		ObjectMapper mapper = new ObjectMapper(new YAMLFactory()
+//				.enable( YAMLGenerator.Feature.MINIMIZE_QUOTES )
+//				.enable( YAMLGenerator.Feature.LITERAL_BLOCK_STYLE ));
+//
+//		try
+//		{
+//			FileOutputStream fos = new FileOutputStream( outputPath );
+//			SequenceWriter sw = mapper.writer().writeValues(fos);
+//			sw.write( metadata );
+//			fos.close();
+//		}
+//		catch ( Exception e )
+//		{
+//			e.printStackTrace();
+//		}
+//	}
 
 }
