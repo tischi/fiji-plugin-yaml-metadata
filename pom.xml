@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>fiji-plugin-yamlMetadataCreator</artifactId>
-	<version>0.1.02</version>
+	<version>0.1.03</version>
 
 	<name>Fiji Plugin YAML Metadata</name>
 	<description>TODO</description>

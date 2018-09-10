@@ -52,9 +52,17 @@ public class MetadataCommand implements Command
 		final MetadataCreator metadataCreator = new MetadataCreator( dataset.getAbsolutePath() );
 		final Metadata metadata = metadataCreator.getMetadata();
 
-		String outputPath = dataset.getAbsolutePath()  + ".yaml";
+		String outputPath = getOutputPath();
+
 		createSnakeYamlFile( metadata, outputPath );
+
 		IJ.open( outputPath );
+	}
+
+	public String getOutputPath()
+	{
+		final String absolutePath = dataset.getAbsolutePath();
+		return absolutePath.substring(0, absolutePath.lastIndexOf('.')) + ".yaml";
 	}
 
 	public void createSnakeYamlFile( Metadata metadata, String outputPath )
