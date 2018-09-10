@@ -20,7 +20,7 @@ public class MetadataCreator
 	public static final String ENTITY = "Entity";
 	public static final String LABEL = "Label";
 	public static final String TOTAL_DATA_SIZE = "Total data size";
-	public static final String UNKNOWN = "???";
+	public static final String UNKNOWN = "NA";
 	public static final String TIME_POINTS = "Time points";
 	public static final String SPECIES = "Species";
 	public static final String GENES = "Genes";
@@ -87,6 +87,7 @@ public class MetadataCreator
 
 	private void addPhysicalDimensions()
 	{
+
 		Length physicalSizeX = meta.getPixelsPhysicalSizeX(series);
 		Length physicalSizeY = meta.getPixelsPhysicalSizeY(series);
 		Length physicalSizeZ = meta.getPixelsPhysicalSizeZ(series);
