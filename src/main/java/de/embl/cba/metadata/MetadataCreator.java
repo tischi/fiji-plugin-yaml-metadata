@@ -30,7 +30,7 @@ public class MetadataCreator
 	IMetadata meta;
 	int series;
 	Map< String, Object > map;
-	Metadata metadata;
+	MetaData metadata;
 	String filePath;
 
 	public MetadataCreator( String filePath )
@@ -39,7 +39,7 @@ public class MetadataCreator
 		this.map = new LinkedHashMap<>(  );
 		initialiseBioformats();
 		populateMetadataMap();
-		metadata = new Metadata();
+		metadata = new MetaData();
 		metadata.metadata = map;
 	}
 
@@ -154,7 +154,7 @@ public class MetadataCreator
 		map.put( TOTAL_DATA_SIZE, "" + Math.round( fileSizeInMB ) + " Mb" );
 	}
 
-	public Metadata getMetadata()
+	public MetaData getMetadata()
 	{
 		return metadata;
 	}

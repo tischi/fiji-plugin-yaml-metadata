@@ -15,10 +15,9 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 
-@Plugin(type = Command.class, menuPath = "Plugins>Metadata>Create YAML metadata" )
+@Plugin(type = Command.class, menuPath = "Plugins>MetaData>Create YAML metadata" )
 public class MetadataCommand implements Command
 {
 
@@ -50,7 +49,7 @@ public class MetadataCommand implements Command
 	public void run()
 	{
 		final MetadataCreator metadataCreator = new MetadataCreator( dataset.getAbsolutePath() );
-		final Metadata metadata = metadataCreator.getMetadata();
+		final MetaData metadata = metadataCreator.getMetadata();
 
 		String outputPath = getOutputPath();
 
@@ -65,7 +64,7 @@ public class MetadataCommand implements Command
 		return absolutePath.substring(0, absolutePath.lastIndexOf('.')) + ".yaml";
 	}
 
-	public void createSnakeYamlFile( Metadata metadata, String outputPath )
+	public void createSnakeYamlFile(MetaData metadata, String outputPath )
 	{
 		try
 		{
@@ -93,7 +92,7 @@ public class MetadataCommand implements Command
 		return dumperOptions;
 	}
 
-//	public void createJacksonYamlFile( Metadata metadata, String outputPath )
+//	public void createJacksonYamlFile( MetaData metadata, String outputPath )
 //	{
 //
 //		// Create an ObjectMapper mapper for YAML
