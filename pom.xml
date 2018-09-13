@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>23.1.0</version>
+		<version>23.2.0</version>
 	</parent>
 
 	<artifactId>fiji-plugin-yamlMetadataCreator</artifactId>
-	<version>0.1.03</version>
+	<version>0.1.05</version>
 
 	<name>Fiji Plugin YAML Metadata</name>
 	<description>TODO</description>
@@ -72,7 +72,7 @@
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
 		<imagej.app.directory>/Applications/Fiji.app/</imagej.app.directory>
-		<enforcer.skip>true</enforcer.skip>
+		<!--  <enforcer.skip>true</enforcer.skip> -->
 	</properties>
 
 
@@ -129,7 +129,7 @@
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>1.16</version>
+			<version>1.23</version>
 		</dependency>
 
 		<!--<dependency>-->
