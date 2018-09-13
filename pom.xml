@@ -10,8 +10,9 @@
 
 	<artifactId>fiji-plugin-yamlMetadataCreator</artifactId>
 	<version>0.1.05</version>
-
+	<url>https://github.com/imglib/fiji-plugin-yaml-metadata/</url>
 	<name>Fiji Plugin YAML Metadata</name>
+
 	<description>TODO</description>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
@@ -54,14 +55,14 @@
 
 
 	<scm>
-		<connection>scm:git:git://github.com/tischi/imglib2-drosophila-registration</connection>
-		<developerConnection>scm:git:git@github.com/tischi/imglib2-drosophila-registration</developerConnection>
+		<connection>scm:git:git://github.com/tischi/fiji-plugin-yaml-metadata</connection>
+		<developerConnection>scm:git:git@github.com/tischi/fiji-plugin-yaml-metadata</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/tischi/imglib2-drosophila-registration</url>
+		<url>https://github.com/tischi/fiji-plugin-yaml-metadata</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/imglib/imglib2-drosophila-registration/issues</url>
+		<url>https://github.com/imglib/fiji-plugin-yaml-metadata/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>None</system>
@@ -72,6 +73,7 @@
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
 		<imagej.app.directory>/Applications/Fiji.app/</imagej.app.directory>
+		<url>https://github.com/imglib/fiji-plugin-yaml-metadata/</url>
 		<!--  <enforcer.skip>true</enforcer.skip> -->
 	</properties>
 
@@ -116,14 +118,21 @@
 			<artifactId>formats-bsd</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>ome</groupId>
-			<artifactId>formats-gpl</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>ome</groupId>-->
+			<!--<artifactId>formats-gpl</artifactId>-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>bio-formats_plugins</artifactId>
+			<exclusions>
+				<exclusion>
+					<!-- NB: Exclude problematic uber-JAR that bundles commons-io. -->
+					<groupId>ch.systems.cisd</groupId>
+					<artifactId>jhdf5</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
