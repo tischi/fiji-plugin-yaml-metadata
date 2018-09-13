@@ -125,6 +125,12 @@
 		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>bio-formats_plugins</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.systems.cisd</groupId>
+					<artifactId>jhdf5</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
