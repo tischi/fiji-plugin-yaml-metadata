@@ -52,6 +52,7 @@
 			<archive>http://forum.imagej.net/</archive>
 		</mailingList>
 	</mailingLists>
+	<url>https://www.embl.de/services/core_facilities/almf/</url>
 
 
 	<scm>
@@ -110,25 +111,9 @@
 
 		<dependency>
 			<groupId>ome</groupId>
-			<artifactId>formats-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>ome</groupId>
-			<artifactId>formats-bsd</artifactId>
-		</dependency>
-
-		<!--<dependency>-->
-			<!--<groupId>ome</groupId>-->
-			<!--<artifactId>formats-gpl</artifactId>-->
-		<!--</dependency>-->
-
-		<dependency>
-			<groupId>ome</groupId>
 			<artifactId>bio-formats_plugins</artifactId>
 			<exclusions>
 				<exclusion>
-					<!-- NB: Exclude problematic uber-JAR that bundles commons-io. -->
 					<groupId>ch.systems.cisd</groupId>
 					<artifactId>jhdf5</artifactId>
 				</exclusion>

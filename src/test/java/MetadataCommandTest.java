@@ -10,7 +10,7 @@ public class MetadataCommandTest
 		ij.ui().showUI();
 
 //		ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-//		final Metadata metadata = mapper.readValue( new File( "/Volumes/cba/exchange/OeyvindOedegaard/yaml_project/20180627_LSM780M2_208_ibidi1_fcs_D_Posx48_2.lsm.yaml" ), Metadata.class );
+//		final MetaData metadata = mapper.readValue( new File( "/Volumes/cba/exchange/OeyvindOedegaard/yaml_project/20180627_LSM780M2_208_ibidi1_fcs_D_Posx48_2.lsm.yaml" ), MetaData.class );
 
 		// invoke the plugin
 		ij.command().run( MetadataCommand.class, true );
