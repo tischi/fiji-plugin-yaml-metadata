@@ -51,6 +51,7 @@
 			<archive>http://forum.imagej.net/</archive>
 		</mailingList>
 	</mailingLists>
+	<url>https://www.embl.de/services/core_facilities/almf/</url>
 
 
 	<scm>
@@ -105,7 +106,7 @@
 			<groupId>net.imagej</groupId>
 			<artifactId>ij</artifactId>
 		</dependency>
-
+<!--
 		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>formats-api</artifactId>
@@ -119,11 +120,17 @@
 		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>formats-gpl</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>bio-formats_plugins</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.systems.cisd</groupId>
+					<artifactId>jhdf5</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>

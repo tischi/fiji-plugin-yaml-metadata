@@ -1,5 +1,5 @@
 
-import de.embl.cba.metadata.Metadata;
+import de.embl.cba.metadata.MetaData;
 import de.embl.cba.metadata.MetadataCreator;
 import ij.IJ;
 import ij.ImageJ;
@@ -9,7 +9,6 @@ import org.yaml.snakeyaml.Yaml;
 
 
 import java.io.FileWriter;
-import java.util.*;
 
 /**
  * Uses Bio-Formats to extract some basic standardized
@@ -26,7 +25,7 @@ public class BioFormatsMetadataExtractionTest
 
 		final MetadataCreator metadataCreator = new MetadataCreator( file );
 
-		final Metadata metadata = metadataCreator.getMetadata();
+		final MetaData metadata = metadataCreator.getMetadata();
 
 		final DumperOptions dumperOptions = new DumperOptions();
 		dumperOptions.setDefaultFlowStyle( DumperOptions.FlowStyle.BLOCK );
