@@ -52,7 +52,6 @@
 			<archive>http://forum.imagej.net/</archive>
 		</mailingList>
 	</mailingLists>
-	<url>https://www.embl.de/services/core_facilities/almf/</url>
 
 
 	<scm>
@@ -75,7 +74,6 @@
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
 		<imagej.app.directory>/Applications/Fiji.app/</imagej.app.directory>
 		<url>https://github.com/imglib/fiji-plugin-yaml-metadata/</url>
-		<!--  <enforcer.skip>true</enforcer.skip> -->
 	</properties>
 
 
