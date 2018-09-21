@@ -24,7 +24,6 @@ public class BioFormatsMetadataExtractionTest
 		String file = "/Volumes/cba/exchange/OeyvindOedegaard/yaml_project/20180627_LSM780M2_208_ibidi1_fcs_B_Posx96.lsm";
 
 		final MetadataCreator metadataCreator = new MetadataCreator( file );
-
 		final MetaData metadata = metadataCreator.getMetadata();
 
 		final DumperOptions dumperOptions = new DumperOptions();

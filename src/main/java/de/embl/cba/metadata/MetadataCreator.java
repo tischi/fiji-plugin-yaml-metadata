@@ -63,6 +63,7 @@ public class MetadataCreator
 			int seriesCount = reader.getSeriesCount();
 			series = reader.getSeries();
 			log( "\tImage series = " + series + " of " + seriesCount );
+
 		}
 		catch ( Exception e )
 		{
@@ -87,17 +88,37 @@ public class MetadataCreator
 
 	private void addPhysicalDimensions()
 	{
+		final LinkedHashMap< String, Object > physicalDimensions = new LinkedHashMap<>();
 
 		Length physicalSizeX = meta.getPixelsPhysicalSizeX(series);
 		Length physicalSizeY = meta.getPixelsPhysicalSizeY(series);
 		Length physicalSizeZ = meta.getPixelsPhysicalSizeZ(series);
+
+		if ( physicalSizeX != null )
+		{
+			physicalDimensions.put( "X", physicalSizeX.value() + " " + physicalSizeX.unit().getSymbol() );
+			physicalDimensions.put( "Y", physicalSizeY.value() + " " + physicalSizeY.unit().getSymbol() );
+			physicalDimensions.put( "Z", physicalSizeZ.value() + " " + physicalSizeZ.unit().getSymbol() );
+		}
+		else
+		{
+			physicalDimensions.put( "X", "1 pixel" );
+			physicalDimensions.put( "Y", "1 pixel" );
+			physicalDimensions.put( "Z", "1 pixel" );
+		}
+
+
 		Time timeIncrement = meta.getPixelsTimeIncrement(series);
 
-		final LinkedHashMap< String, Object > physicalDimensions = new LinkedHashMap<>();
-		physicalDimensions.put( "X", physicalSizeX.value() + " " + physicalSizeX.unit().getSymbol() );
-		physicalDimensions.put( "Y", physicalSizeY.value() + " " + physicalSizeY.unit().getSymbol() );
-		physicalDimensions.put( "Z", physicalSizeZ.value() + " " + physicalSizeZ.unit().getSymbol() );
-		physicalDimensions.put( "T", timeIncrement.value( UNITS.SECOND ).doubleValue() + " seconds" );
+		if ( timeIncrement != null )
+		{
+			physicalDimensions.put( "T", timeIncrement.value( UNITS.SECOND ).doubleValue() + " seconds" );
+		}
+		else
+		{
+			physicalDimensions.put( "T", "1 frame" );
+		}
+
 		map.put( "Physical dimensions", physicalDimensions );
 	}
 
