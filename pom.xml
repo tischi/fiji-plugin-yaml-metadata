@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>fiji-plugin-yamlMetadataCreator</artifactId>
-	<version>0.1.05</version>
+	<version>0.1.06</version>
 	<url>https://github.com/imglib/fiji-plugin-yaml-metadata/</url>
 	<name>Fiji Plugin YAML Metadata</name>
 

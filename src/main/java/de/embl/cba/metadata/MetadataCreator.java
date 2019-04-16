@@ -102,9 +102,9 @@ public class MetadataCreator
 		}
 		else
 		{
-			physicalDimensions.put( "X", "1 pixel" );
-			physicalDimensions.put( "Y", "1 pixel" );
-			physicalDimensions.put( "Z", "1 pixel" );
+			physicalDimensions.put( "X", UNKNOWN );
+			physicalDimensions.put( "Y", UNKNOWN );
+			physicalDimensions.put( "Z", UNKNOWN );
 		}
 
 
@@ -116,7 +116,7 @@ public class MetadataCreator
 		}
 		else
 		{
-			physicalDimensions.put( "T", "1 frame" );
+			physicalDimensions.put( "T", UNKNOWN );
 		}
 
 		map.put( "Physical dimensions", physicalDimensions );

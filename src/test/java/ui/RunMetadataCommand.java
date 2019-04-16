@@ -1,7 +1,9 @@
+package ui;
+
 import de.embl.cba.metadata.MetadataCommand;
 import net.imagej.ImageJ;
 
-public class MetadataCommandTest
+public class RunMetadataCommand
 {
 
 	public static void main(final String... args) throws Exception

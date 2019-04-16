@@ -1,3 +1,4 @@
+package playground;
 
 import de.embl.cba.metadata.MetaData;
 import de.embl.cba.metadata.MetadataCreator;
