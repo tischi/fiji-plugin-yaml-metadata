@@ -2,11 +2,9 @@ package test;
 
 import de.embl.cba.metadata.MetaData;
 import de.embl.cba.metadata.MetadataCreator;
-import de.embl.cba.metadata.Yaml;
+import de.embl.cba.metadata.YamlWriter;
 
-import java.io.File;
-
-import static de.embl.cba.metadata.Yaml.createSnakeYamlFile;
+import static de.embl.cba.metadata.YamlWriter.createSnakeYamlFile;
 
 public class TestCreateYamlFromImageJTiff
 {
@@ -18,7 +16,7 @@ public class TestCreateYamlFromImageJTiff
 		final MetaData metadata = metadataCreator.getMetadata();
 		String outputPath = path + ".yaml" ;
 
-		createSnakeYamlFile( metadata, outputPath, Yaml.AUTO );
+		createSnakeYamlFile( metadata, outputPath, YamlWriter.BLOCK );
 
 	}
 }

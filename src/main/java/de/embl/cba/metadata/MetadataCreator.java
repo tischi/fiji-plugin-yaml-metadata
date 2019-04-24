@@ -25,6 +25,10 @@ public class MetadataCreator
 	public static final String SPECIES = "Species";
 	public static final String GENES = "Genes";
 	public static final String POSITIONS = "Positions";
+	public static final String X = "X";
+	public static final String Y = "Y";
+	public static final String Z = "Z";
+	public static final String T = "T";
 
 	IFormatReader reader;
 	IMetadata meta;
@@ -90,36 +94,26 @@ public class MetadataCreator
 	{
 		final LinkedHashMap< String, Object > physicalDimensions = new LinkedHashMap<>();
 
-		Length physicalSizeX = meta.getPixelsPhysicalSizeX(series);
-		Length physicalSizeY = meta.getPixelsPhysicalSizeY(series);
-		Length physicalSizeZ = meta.getPixelsPhysicalSizeZ(series);
-
-		if ( physicalSizeX != null )
-		{
-			physicalDimensions.put( "X", physicalSizeX.value() + " " + physicalSizeX.unit().getSymbol() );
-			physicalDimensions.put( "Y", physicalSizeY.value() + " " + physicalSizeY.unit().getSymbol() );
-			physicalDimensions.put( "Z", physicalSizeZ.value() + " " + physicalSizeZ.unit().getSymbol() );
-		}
-		else
-		{
-			physicalDimensions.put( "X", UNKNOWN );
-			physicalDimensions.put( "Y", UNKNOWN );
-			physicalDimensions.put( "Z", UNKNOWN );
-		}
-
+		putPhysicalPixelSize( physicalDimensions, X, meta.getPixelsPhysicalSizeX( series ) );
+		putPhysicalPixelSize( physicalDimensions, Y, meta.getPixelsPhysicalSizeY( series ) );
+		putPhysicalPixelSize( physicalDimensions, Z, meta.getPixelsPhysicalSizeZ( series ) );
 
 		Time timeIncrement = meta.getPixelsTimeIncrement(series);
 
 		if ( timeIncrement != null )
-		{
-			physicalDimensions.put( "T", timeIncrement.value( UNITS.SECOND ).doubleValue() + " seconds" );
-		}
+			physicalDimensions.put( T, timeIncrement.value( UNITS.SECOND ).doubleValue() + " seconds" );
 		else
-		{
-			physicalDimensions.put( "T", UNKNOWN );
-		}
+			physicalDimensions.put( T, UNKNOWN );
 
 		map.put( "Physical dimensions", physicalDimensions );
+	}
+
+	private void putPhysicalPixelSize( LinkedHashMap< String, Object > physicalDimensions, String dimension, Length physicalSize )
+	{
+		if ( physicalSize != null )
+			physicalDimensions.put( dimension, physicalSize.value() + " " + physicalSize.unit().getSymbol() );
+		else
+			physicalDimensions.put( dimension, UNKNOWN );
 	}
 
 	private void addSpecies()

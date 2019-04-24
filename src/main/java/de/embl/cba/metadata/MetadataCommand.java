@@ -1,19 +1,14 @@
 package de.embl.cba.metadata;
 
 import ij.IJ;
-import net.imagej.DatasetService;
-import net.imagej.ops.OpService;
-import org.scijava.app.StatusService;
 import org.scijava.command.Command;
-import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
-import org.scijava.ui.UIService;
 import org.scijava.widget.FileWidget;
 
 import java.io.File;
 
-import static de.embl.cba.metadata.Yaml.createSnakeYamlFile;
+import static de.embl.cba.metadata.YamlWriter.createSnakeYamlFile;
 
 @Plugin(type = Command.class, menuPath = "Plugins>MetaData>Create YAML metadata" )
 public class MetadataCommand implements Command
@@ -22,8 +17,8 @@ public class MetadataCommand implements Command
 	@Parameter( style = FileWidget.OPEN_STYLE )
 	public File dataset;
 
-	@Parameter( choices = { de.embl.cba.metadata.Yaml.AUTO, de.embl.cba.metadata.Yaml.BLOCK, de.embl.cba.metadata.Yaml.FLOW } )
-	public String yamlStyle = de.embl.cba.metadata.Yaml.AUTO;
+	@Parameter( choices = { YamlWriter.AUTO, YamlWriter.BLOCK, YamlWriter.FLOW } )
+	public String yamlStyle = YamlWriter.AUTO;
 
 	public void run()
 	{
