@@ -22,7 +22,7 @@ public class BioFormatsMetadataExtractionTest
 
 		ImageJ.main( args );
 
-		String file = "/Volumes/cba/exchange/OeyvindOedegaard/yaml_project/20180627_LSM780M2_208_ibidi1_fcs_B_Posx96.lsm";
+		String file = "/Volumes/cba/exchange/OeyvindOedegaard/yaml_project/01_TestFiles/20180627_LSM780M2_208_ibidi1_fcs_B_Posx96.lsm";
 
 		final MetadataCreator metadataCreator = new MetadataCreator( file );
 		final MetaData metadata = metadataCreator.getMetadata();
@@ -36,9 +36,6 @@ public class BioFormatsMetadataExtractionTest
 		yaml.dump(metadata, writer);
 
 		IJ.open( outputPath );
-
-
-
 	}
 
 }
