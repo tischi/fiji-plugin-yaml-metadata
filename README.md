@@ -2,7 +2,9 @@
 
 ## How to use with Jython
 
-[yaml from image](https://github.com/tischi/fiji-plugin-yaml-metadata/blob/master/src/test/resources/yaml_from_image.py)
+- [create yaml from image](https://github.com/tischi/fiji-plugin-yaml-metadata/blob/master/src/test/resources/yaml_from_image.py)
+- [read yaml into a dict](https://github.com/tischi/fiji-plugin-yaml-metadata/blob/master/src/test/resources/read_yaml.py)
+  - [metadata fields](https://github.com/tischi/fiji-plugin-yaml-metadata/blob/master/src/main/java/de/embl/cba/metadata/MetadataCreator.java#L19)
 
 ## How to read in R-Studio
 
