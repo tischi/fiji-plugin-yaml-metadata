@@ -16,5 +16,7 @@ outputPath = "/Volumes/cba/exchange/OeyvindOedegaard/yaml_project/test.yaml";
 yaml = Yaml( dumperOptions );
 writer = FileWriter( outputPath );
 yaml.dump(metadata, writer);
+writer.flush();
+writer.close();
 
 IJ.open( outputPath );
