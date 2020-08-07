@@ -9,6 +9,7 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 
 
+import java.io.FileInputStream;
 import java.io.FileWriter;
 
 /**
@@ -34,6 +35,8 @@ public class BioFormatsMetadataExtractionTest
 		Yaml yaml = new Yaml( dumperOptions );
 		FileWriter writer = new FileWriter( outputPath );
 		yaml.dump(metadata, writer);
+		writer.flush();
+		writer.close();
 
 		IJ.open( outputPath );
 	}
